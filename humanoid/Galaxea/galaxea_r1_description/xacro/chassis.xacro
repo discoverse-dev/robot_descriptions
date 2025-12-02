@@ -64,8 +64,9 @@
         </geometry>
       </visual>
       <collision>
+        <origin rpy="${PI/2} 0 0"/>
         <geometry>
-          <mesh filename="file://$(find galaxea_r1_description)/meshes/wheel_motor.obj"/>
+          <cylinder radius="0.07" length="0.048"/>
         </geometry>
       </collision>
     </link>
@@ -121,8 +122,9 @@
         </geometry>
       </visual>
       <collision>
+        <origin rpy="${PI/2} 0 0"/>
         <geometry>
-          <mesh filename="file://$(find galaxea_r1_description)/meshes/wheel_motor.obj"/>
+          <cylinder radius="0.07" length="0.048"/>
         </geometry>
       </collision>
     </link>
@@ -176,8 +178,9 @@
         </geometry>
       </visual>
       <collision>
+        <origin rpy="${PI/2} 0 0"/>
         <geometry>
-          <mesh filename="file://$(find galaxea_r1_description)/meshes/wheel_motor.obj"/>
+          <cylinder radius="0.07" length="0.048"/>
         </geometry>
       </collision>
     </link>

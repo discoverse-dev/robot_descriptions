@@ -14,7 +14,7 @@
   <license>BSD</license>
   <depend>piper_description</depend>
   <depend>arx5_description</depend>
-  <depend>camera_models</depend>
+  <depend>sensor_models</depend>
   <exec_depend>robot_common_launch</exec_depend>
 
   <export>

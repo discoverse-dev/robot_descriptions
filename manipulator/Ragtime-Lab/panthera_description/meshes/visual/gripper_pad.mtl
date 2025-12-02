@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bf21f970510d51d56d12bbe0725187adb7b71472bd042ce59c9360236fc12615
-size 238
+# Blender 4.5.0 MTL File: 'None'
+# www.blender.org
+
+newmtl black_shell.001
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.150000 0.150000 0.150000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2

@@ -50,8 +50,8 @@
     <origin xyz="0.241 -0.185 -0.115"/>
     <parent link="base"/>
     <child link="fr_steering_wheel_link"/>
-    <axis xyz="0 0 -1"/>
-    <limit effort="5" velocity="6.28" lower="-2.1" upper="2.1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="5" velocity="6.28" lower="-3.14159" upper="3.14159"/>
   </joint>
 
   <link name="fr_wheel_link">
@@ -104,8 +104,8 @@
     <origin xyz="0.241 0.185 -0.115"/>
     <parent link="base"/>
     <child link="fl_steering_wheel_link"/>
-    <axis xyz="0 0 -1"/>
-    <limit effort="5" velocity="6.28" lower="-2.1" upper="2.1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="5" velocity="6.28" lower="-3.14159" upper="3.14159"/>
   </joint>
 
   <link name="fl_wheel_link">
@@ -157,8 +157,8 @@
     <origin xyz="-0.253 0.185 -0.115"/>
     <parent link="base"/>
     <child link="rl_steering_wheel_link"/>
-    <axis xyz="0 0 -1"/>
-    <limit effort="5" velocity="6.28" lower="-2.1" upper="2.1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="5" velocity="6.28" lower="-3.14159" upper="3.14159"/>
   </joint>
 
   <link name="rl_wheel_link">
@@ -188,8 +188,15 @@
 
   <link name="rr_steering_wheel_link">
     <inertial>
+      <origin xyz="-0.00017093 -6.1255E-08 0.043678"/>
       <mass value="1"/>
-      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+      <inertia
+          ixx="0.0063627"
+          ixy="-2.1069E-08"
+          ixz="-1.587E-05"
+          iyy="0.006363"
+          iyz="9.3201E-09"
+          izz="0.010465"/>
     </inertial>
     <visual>
       <geometry>
@@ -202,8 +209,8 @@
     <origin xyz="-0.253 -0.185 -0.115"/>
     <parent link="base"/>
     <child link="rr_steering_wheel_link"/>
-    <axis xyz="0 0 -1"/>
-    <limit effort="5" velocity="6.28" lower="-2.1" upper="2.1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="5" velocity="6.28" lower="-3.14159" upper="3.14159"/>
   </joint>
 
   <link name="rr_wheel_link">

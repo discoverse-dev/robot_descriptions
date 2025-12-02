@@ -3,7 +3,7 @@
 <!-- |    Complete Robot Description for Agilex Aloha                                     | -->
 <!-- |    This file includes the base robot structure and both arms                    | -->
 <!-- =================================================================================== -->
-<robot name="LeftArm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="Agilex_Aloha_Spilt" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 	<xacro:arg name="type" default="ranger_mini"/>
 
@@ -18,5 +18,27 @@
 	<xacro:if value="${'$(arg type)' == 'tracer_v2'}">
 		<xacro:include filename="$(find agilex_aloha_description)/xacro/base/tracer_v2.xacro"/>
 	</xacro:if>
+
+	<xacro:if value="${'$(arg type)' == 'body_v1'}">
+		<link name="base_footprint"/>
+		<link name="left_base_link"/>
+		<link name="right_base_link"/>
+		<xacro:include filename="$(find agilex_aloha_description)/xacro/body/v1.xacro"/>
+	</xacro:if>
+
+	<xacro:if value="${'$(arg type)' == 'body_v2'}">
+		<link name="base_footprint"/>
+		<link name="left_base_link"/>
+		<link name="right_base_link"/>
+		<xacro:include filename="$(find agilex_aloha_description)/xacro/body/v2.xacro"/>
+	</xacro:if>
+
+	<xacro:if value="${'$(arg type)' == 'body_split'}">
+		<link name="base"/>
+		<link name="left_base_link"/>
+		<link name="right_base_link"/>
+		<xacro:include filename="$(find agilex_aloha_description)/xacro/body/split.xacro"/>
+	</xacro:if>
+
 
 </robot>

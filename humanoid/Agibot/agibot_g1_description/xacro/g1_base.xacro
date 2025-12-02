@@ -77,6 +77,11 @@
 					iyz="5.0454E-18"
 					izz="0.0051541"/>
 		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="file://$(find agibot_g1_description)/meshes/base/wheel.obj" scale="1 1 1"/>
+			</geometry>
+		</visual>
 		<collision>
 			<origin rpy="1.5708 0 0"/>
 			<geometry>
@@ -84,6 +89,7 @@
 			</geometry>
 		</collision>
 	</link>
+
 	<joint name="left_wheel_joint" type="continuous">
 		<parent link="base_link"/>
 		<child link="left_wheel"/>
@@ -117,6 +123,11 @@
 					iyz="5.0454E-18"
 					izz="0.0051541"/>
 		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="file://$(find agibot_g1_description)/meshes/base/wheel.obj" scale="1 -1 1"/>
+			</geometry>
+		</visual>
 		<collision>
 			<origin rpy="1.5708 0 0"/>
 			<geometry>

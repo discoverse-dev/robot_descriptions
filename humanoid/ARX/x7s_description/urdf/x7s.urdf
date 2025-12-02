@@ -123,7 +123,7 @@
   <link name="head_camera">
     <visual>
       <geometry>
-        <mesh filename="package://camera_models/meshes/d405/d405.obj"/>
+        <mesh filename="package://sensor_models/meshes/d405/d405.obj"/>
       </geometry>
     </visual>
   </link>

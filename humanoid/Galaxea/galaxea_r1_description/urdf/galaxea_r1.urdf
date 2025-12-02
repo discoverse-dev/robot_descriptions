@@ -580,7 +580,7 @@
     <visual>
       <origin rpy="1.5707963267948966 -1.5707963267948966 0" xyz="0.0325 0 0"/>
       <geometry>
-        <mesh filename="package://camera_models/meshes/d435/d435.obj"/>
+        <mesh filename="package://sensor_models/meshes/d435/d435.obj"/>
       </geometry>
     </visual>
     <collision>
@@ -869,7 +869,7 @@
     <visual>
       <origin rpy="1.5707963267948966 -1.5707963267948966 0" xyz="0.0325 0 0"/>
       <geometry>
-        <mesh filename="package://camera_models/meshes/d435/d435.obj"/>
+        <mesh filename="package://sensor_models/meshes/d435/d435.obj"/>
       </geometry>
     </visual>
     <collision>

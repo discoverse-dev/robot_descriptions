@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f20227f5d221d2d4225ca99d45c2aeb9049c00afba9807c0c07729f667826926
-size 399
+# Blender 4.4.3 MTL File: 'None'
+# www.blender.org
+
+newmtl black_metal.004
+Ns 250.000000
+Ka 0.743902 0.743902 0.743902
+Kd 0.1 0.1 0.1
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+
+newmtl black_shell.002
+Ns 157.655716
+Ka 0.065474 0.065474 0.065474
+Kd 0.2 0.2 0.2
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3

@@ -27,7 +27,7 @@
 		<link name="${prefix}camera">
 			<visual>
 				<geometry>
-					<mesh filename="file://$(find camera_models)/meshes/d405/d405.obj"/>
+					<mesh filename="file://$(find sensor_models)/meshes/d405/d405.obj"/>
 				</geometry>
 			</visual>
 		</link>

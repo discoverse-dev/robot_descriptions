@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2f2759fa9f3f23f2bc6b45fdea7e837122a58a605263a8e44201fdefdb67b4af
-size 236
+# Blender 5.1.0 Alpha MTL File: 'None'
+# www.blender.org
+
+newmtl black
+Ns 250.000000
+Ka 0.500000 0.500000 0.500000
+Kd 0.010000 0.010000 0.010000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3

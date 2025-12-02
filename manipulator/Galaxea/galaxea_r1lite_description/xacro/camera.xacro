@@ -17,7 +17,7 @@
 			<visual>
 				<origin rpy="0 ${-PI/2} ${PI/2}" xyz="0.008996 0 0"/>
 				<geometry>
-					<mesh filename="file://$(find camera_models)/meshes/d405/d405.obj"/>
+					<mesh filename="file://$(find sensor_models)/meshes/d405/d405.obj"/>
 				</geometry>
 			</visual>
 			<collision>

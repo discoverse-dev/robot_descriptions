@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:67f919e8a52c5617f7b547dd37634911bac433f637b5385f43c2d606052e7311
-size 234
+# Blender 4.5.1 LTS MTL File: 'None'
+# www.blender.org
+
+newmtl motor
+Ns 490.000000
+Ka 0.500000 0.500000 0.500000
+Kd 0.500000 0.500000 0.500000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3

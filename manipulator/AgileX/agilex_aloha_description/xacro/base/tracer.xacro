@@ -2,6 +2,8 @@
 <robot name="tracer" xmlns:xacro="http://ros.org/wiki/xacro">
 
 	<link name="base_footprint"/>
+	<xacro:property name="PI" value="3.1415926535897931"/>
+	<xacro:property name="caster_height" value="0.0413"/>
 
 	<joint name="base_joint" type="fixed">
 		<origin xyz="0 0 0.143"/>
@@ -36,7 +38,6 @@
 	</link>
 
 	<joint name="inertial_joint" type="fixed">
-		<origin/>
 		<parent link="base_link"/>
 		<child link="inertial_link"/>
 	</joint>
@@ -52,8 +53,9 @@
 			</geometry>
 		</visual>
 		<collision>
+			<origin rpy="${PI/2} 0 0"/>
 			<geometry>
-				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer/tracer_wheel.obj"/>
+				<cylinder radius="0.0607" length="0.0588"/>
 			</geometry>
 		</collision>
 	</link>
@@ -76,8 +78,9 @@
 			</geometry>
 		</visual>
 		<collision>
+			<origin rpy="${PI/2} 0 0"/>
 			<geometry>
-				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer/tracer_wheel.obj"/>
+				<cylinder radius="0.0607" length="0.0588"/>
 			</geometry>
 		</collision>
 	</link>
@@ -104,7 +107,7 @@
 	<joint name="fl_castor_wheel" type="continuous">
 		<parent link="base_link"/>
 		<child link="fl_castor_link"/>
-		<origin xyz="0.19 0.17 -0.038" rpy="-1.57 0 0"/>
+		<origin xyz="0.19 0.17 -${caster_height}" rpy="-${PI/2} 0 0"/>
 		<axis xyz="0 1 0"/>
 	</joint>
 
@@ -121,7 +124,7 @@
 	</link>
 
 	<joint name="fr_castor_wheel" type="continuous">
-		<origin xyz="0.18955 -0.17 -0.0380886" rpy="-1.57 0 0"/>
+		<origin xyz="0.18955 -0.17 -${caster_height}" rpy="-${PI/2} 0 0"/>
 		<parent link="base_link"/>
 		<child link="fr_castor_link"/>
 		<axis xyz="0 1 0"/>
@@ -140,7 +143,7 @@
 	</link>
 
 	<joint name="rr_castor_wheel" type="continuous">
-		<origin xyz="-0.18955 -0.17 -0.0380886" rpy="-1.57 0 0"/>
+		<origin xyz="-0.18955 -0.17 -${caster_height}" rpy="-${PI/2} 0 0"/>
 		<parent link="base_link"/>
 		<child link="rr_castor_link"/>
 		<axis xyz="0 1 0"/>
@@ -159,7 +162,7 @@
 	</link>
 
 	<joint name="rl_castor_wheel" type="continuous">
-		<origin xyz="-0.18955 0.17 -0.0380886" rpy="-1.57 0 0"/>
+		<origin xyz="-0.18955 0.17 -${caster_height}" rpy="-${PI/2} 0 0"/>
 		<parent link="base_link"/>
 		<child link="rl_castor_link"/>
 		<axis xyz="0 1 0"/>
@@ -176,8 +179,8 @@
 			</geometry>
 		</visual>
 		<collision>
-			<geometry>-->
-				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer/castor.obj"/>
+			<geometry>
+				<cylinder radius="0.0375" length="0.0534"/>
 			</geometry>
 		</collision>
 	</link>
@@ -201,8 +204,8 @@
 			</geometry>
 		</visual>
 		<collision>
-			<geometry>-->
-				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer/castor.obj"/>
+			<geometry>
+				<cylinder radius="0.0375" length="0.0534"/>
 			</geometry>
 		</collision>
 	</link>
@@ -227,7 +230,7 @@
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer/castor.obj"/>
+				<cylinder radius="0.0375" length="0.0534"/>
 			</geometry>
 		</collision>
 	</link>
@@ -252,7 +255,7 @@
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer/castor.obj"/>
+				<cylinder radius="0.0375" length="0.0534"/>
 			</geometry>
 		</collision>
 	</link>

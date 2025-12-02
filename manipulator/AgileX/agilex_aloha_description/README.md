@@ -67,7 +67,21 @@ ros2 launch robot_common_launch manipulator.launch.py robot:=agilex_aloha type:=
   source ~/ros2_ws/install/setup.bash
   ros2 launch robot_common_launch component.launch.py robot:=agilex_aloha type:=tracer_v2
   ```
-  
+* V1 Body
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch component.launch.py robot:=agilex_aloha type:=body_v1
+  ```
+* V2 Body
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch component.launch.py robot:=agilex_aloha type:=body_v2
+  ```
+* Split Body
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch component.launch.py robot:=agilex_aloha type:=body_split
+  ```
 
 ## 3. OCS2 Demo
 

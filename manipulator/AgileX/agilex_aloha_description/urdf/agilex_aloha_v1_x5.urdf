@@ -301,7 +301,7 @@
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://camera_models/meshes/d435/d435.obj"/>
+        <mesh filename="package://sensor_models/meshes/d435/d435.obj"/>
       </geometry>
     </visual>
   </link>
@@ -323,7 +323,7 @@
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://camera_models/meshes/d435/d435.obj"/>
+        <mesh filename="package://sensor_models/meshes/d435/d435.obj"/>
       </geometry>
     </visual>
   </link>
@@ -340,7 +340,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://camera_models/meshes/mid360/mid360.obj"/>
+        <mesh filename="package://sensor_models/meshes/mid360/mid360.obj"/>
       </geometry>
     </visual>
   </link>
@@ -605,7 +605,7 @@
   <link name="left_camera">
     <visual>
       <geometry>
-        <mesh filename="package://camera_models/meshes/d435/d435.obj"/>
+        <mesh filename="package://sensor_models/meshes/d435/d435.obj"/>
       </geometry>
     </visual>
   </link>
@@ -858,7 +858,7 @@
   <link name="right_camera">
     <visual>
       <geometry>
-        <mesh filename="package://camera_models/meshes/d435/d435.obj"/>
+        <mesh filename="package://sensor_models/meshes/d435/d435.obj"/>
       </geometry>
     </visual>
   </link>

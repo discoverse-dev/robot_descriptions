@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:16dee718330dd0100e0fd057c6bd8acc8285acfb4d4a16dfaca4c79709b4ff3b
-size 415
+# Blender 4.4.3 MTL File: 'None'
+# www.blender.org
+
+newmtl grey_metal.008
+Ns 96.048752
+Ka 1.000000 1.000000 1.000000
+Kd 0.12 0.12 0.12
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+
+newmtl white_metal.007
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3

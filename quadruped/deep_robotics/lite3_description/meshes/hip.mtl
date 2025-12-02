@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5bbe296e3d1707587219f458496f86f12e9e7979c6674ceb16d4018e980ba34c
-size 230
+# Blender 4.5.0 MTL File: 'None'
+# www.blender.org
+
+newmtl white
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
