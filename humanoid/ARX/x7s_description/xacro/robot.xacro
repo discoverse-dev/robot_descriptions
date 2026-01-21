@@ -1,6 +1,0 @@
-<robot name="Airbot Play" xmlns:xacro="http://www.ros.org/wiki/xacro">
-
-  <xacro:include filename="$(find x7s_description)/xacro/x7s.xacro"/>
-  <xacro:x7s/>
-
-</robot>

@@ -28,19 +28,19 @@
 	</link>
 
 	<!-- left leg -->
-	<xacro:A2Leg name="left" direction="1" joint_idx_offset="1" parent_link="base_link" hip_roll_origin_y="0.105"/>
+	<xacro:A2Leg name="left" direction="1" parent_link="base_link"/>
 
 	<!-- right leg -->
-	<xacro:A2Leg name="right" direction="-1" joint_idx_offset="7" parent_link="base_link" hip_roll_origin_y="-0.105"/>
+	<xacro:A2Leg name="right" direction="-1" parent_link="base_link"/>
 
 	<!-- left arm -->
-	<xacro:A2Arm name="left" direction="1" joint_idx_offset="13"/>
+	<xacro:A2Arm name="left" direction="1"/>
 
 	<!-- Left hand fingers -->
 	<xacro:A2Hand name="left" direction="1" parent_link="left_arm_link07"/>
 
 	<!-- right arm -->
-	<xacro:A2Arm name="right" direction="-1" joint_idx_offset="20"/>
+	<xacro:A2Arm name="right" direction="-1"/>
 
 	<!-- Right hand fingers -->
 	<xacro:A2Hand name="right" direction="-1" parent_link="right_arm_link07"/>

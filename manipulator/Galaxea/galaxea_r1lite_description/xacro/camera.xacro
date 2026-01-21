@@ -14,12 +14,6 @@
 					<mesh filename="file://$(find galaxea_r1lite_description)/meshes/visual/camera_stand.obj"/>
 				</geometry>
 			</visual>
-			<visual>
-				<origin rpy="0 ${-PI/2} ${PI/2}" xyz="0.008996 0 0"/>
-				<geometry>
-					<mesh filename="file://$(find sensor_models)/meshes/d405/d405.obj"/>
-				</geometry>
-			</visual>
 			<collision>
 				<geometry>
 					<mesh filename="file://$(find galaxea_r1lite_description)/meshes/collision/camera.stl"/>
@@ -31,5 +25,21 @@
 			<parent link="${prefix}gripper_base"/>
 			<child link="${prefix}camera_stand"/>
 		</joint>
+
+
+		<link name="${prefix}camera">
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find sensor_models)/meshes/d405/d405.obj"/>
+				</geometry>
+			</visual>
+		</link>
+
+		<joint name="${prefix}camera_joint" type="fixed">
+			<origin rpy="0 ${-PI/2} ${PI/2}" xyz="0.008996 0 0"/>
+			<parent link="${prefix}camera_stand"/>
+			<child link="${prefix}camera"/>
+		</joint>
+
 	</xacro:macro>
 </robot>

@@ -43,10 +43,12 @@ ocs2_arm_controller:
     state_interfaces:
       - position
 
+    home_duration: 5.0
+
     robot_name: galaxea_r1
 
     # Control parameters
-    home_pos: [ 0.0, 0.0, 0.0, 0.0,
+    home_pos: [ 0.78551, -1.53995, -0.67136, 0.0,
                 1.635, 2.635, -2.2, 0.0, 0.0, 0.0,
                 -1.635, 2.635, -2.2, 0.0, 0.0, 0.0 ]
     rest_pos: [ 1.833, -2.792, -0.913, 0.0,

@@ -35,15 +35,10 @@
           <mesh filename="file://$(find galaxea_r1_description)/meshes/steer_motor.obj"/>
         </geometry>
       </visual>
-      <collision>
-        <geometry>
-          <mesh filename="file://$(find galaxea_r1_description)/meshes/steer_motor.obj"/>
-        </geometry>
-      </collision>
     </link>
 
     <!-- Steer Motor Joint 1: Base to Steer Motor 1 -->
-    <joint name="steer_motor_joint1" type="revolute">
+    <joint name="steer_joint1" type="revolute">
       <origin xyz="0.21516 0.28 0.12375"/>
       <parent link="base_link"/>
       <child link="steer_motor_link1"/>
@@ -72,11 +67,11 @@
     </link>
 
     <!-- Wheel Motor Joint 1: Steer Motor 1 to Wheel Motor 1 -->
-    <joint name="wheel_motor_joint1" type="continuous">
+    <joint name="wheel_joint1" type="continuous">
       <origin xyz="0 0 -0.09525" rpy="0 0 ${PI}"/>
       <parent link="steer_motor_link1"/>
       <child link="wheel_motor_link1"/>
-      <axis xyz="0 1 0"/>
+      <axis xyz="0 -1 0"/>
     </joint>
 
     <!-- Steer Motor Link 2 -->
@@ -101,7 +96,7 @@
     </link>
 
     <!-- Steer Motor Joint 2: Base to Steer Motor 2 -->
-    <joint name="steer_motor_joint2" type="revolute">
+    <joint name="steer_joint2" type="revolute">
       <origin xyz="0.21516 -0.28 0.12375"/>
       <parent link="base_link"/>
       <child link="steer_motor_link2"/>
@@ -130,7 +125,7 @@
     </link>
 
     <!-- Wheel Motor Joint 2: Steer Motor 2 to Wheel Motor 2 -->
-    <joint name="wheel_motor_joint2" type="continuous">
+    <joint name="wheel_joint2" type="continuous">
       <origin xyz="0 0 -0.09525"/>
       <parent link="steer_motor_link2"/>
       <child link="wheel_motor_link2"/>
@@ -157,7 +152,7 @@
     </link>
 
     <!-- Steer Motor Joint 3: Base to Steer Motor 3 -->
-    <joint name="steer_motor_joint3" type="revolute">
+    <joint name="steer_joint3" type="revolute">
       <origin xyz="-0.28084 0 0.12375"/>
       <parent link="base_link"/>
       <child link="steer_motor_link3"/>
@@ -186,11 +181,11 @@
     </link>
 
     <!-- Wheel Motor Joint 3: Steer Motor 3 to Wheel Motor 3 -->
-    <joint name="wheel_motor_joint3" type="continuous">
+    <joint name="wheel_joint3" type="continuous">
       <origin xyz="0 0 -0.09525" rpy="0 0 ${PI}"/>
       <parent link="steer_motor_link3"/>
       <child link="wheel_motor_link3"/>
-      <axis xyz="0 1 0"/>
+      <axis xyz="0 -1 0"/>
     </joint>
   </xacro:macro>
 </robot>

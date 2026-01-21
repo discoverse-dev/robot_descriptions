@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!-- =================================================================================== -->
+<!-- |    Complete Robot Description for Agibot G1                                     | -->
+<!-- |    This file includes the base robot structure and both arms                    | -->
+<!-- =================================================================================== -->
+<robot name="Galaxea_R1" xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<xacro:property name="PI" value="3.1415926535897931"/>
+	<xacro:arg name="type" default="base"/>
+
+	<xacro:if value="${'$(arg type)' == 'base'}">
+		<!-- Include Chassis -->
+		<xacro:include filename="$(find galaxea_r1_description)/xacro/chassis.xacro"/>
+		<xacro:Chassis/>
+
+		<!-- Include Torso -->
+		<xacro:include filename="$(find galaxea_r1_description)/xacro/torso.xacro"/>
+		<xacro:Torso/>
+	</xacro:if>
+</robot>

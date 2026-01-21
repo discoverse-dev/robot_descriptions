@@ -236,7 +236,7 @@
   <link name="left_camera_support">
     <visual>
       <geometry>
-        <mesh filename="package://arx5_description/meshes/camera_support.obj"/>
+        <mesh filename="package://arx5_description/meshes/camera_stand/stand_d405.obj"/>
       </geometry>
     </visual>
   </link>
@@ -489,7 +489,7 @@
   <link name="right_camera_support">
     <visual>
       <geometry>
-        <mesh filename="package://arx5_description/meshes/camera_support.obj"/>
+        <mesh filename="package://arx5_description/meshes/camera_stand/stand_d405.obj"/>
       </geometry>
     </visual>
   </link>
@@ -510,13 +510,7 @@
     <parent link="right_camera_support"/>
     <child link="right_camera"/>
   </joint>
-  <link name="base_link"/>
-  <joint name="base_joint" type="fixed">
-    <origin rpy="0 0 3.14159"/>
-    <parent link="base_link"/>
-    <child link="base"/>
-  </joint>
-  <link name="base">
+  <link name="base_link">
     <inertial>
       <origin xyz="0.015300075250394498 -0.0039712791148939055 0.21685783167580347"/>
       <mass value="67.7696558151508"/>
@@ -524,155 +518,199 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://arx_lift_description/meshes/base_link.obj"/>
+        <mesh filename="package://arx_lift_description/meshes/base/base_link.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://arx_lift_description/meshes/base_link.obj"/>
+        <mesh filename="package://arx_lift_description/meshes/base/base_link.obj"/>
       </geometry>
     </collision>
   </link>
+  <!-- 轮子链接 -->
   <link name="wheel_1">
     <inertial>
-      <origin xyz="-0.0013052205916280202 0.0022598671755268973 1.318970376112949e-07"/>
+      <origin xyz="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07"/>
       <mass value="4.24803000494366"/>
-      <inertia ixx="0.008031" ixy="-0.002428" ixz="0.0" iyy="0.010834" iyz="0.0" izz="0.006629"/>
+      <inertia ixx="0.012235" ixy="-0.0" ixz="0.0" iyy="0.006629" iyz="0.0" izz="0.006629"/>
     </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://arx_lift_description/meshes/base/wheel.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://arx_lift_description/meshes/base/wheel.obj"/>
+      </geometry>
+    </collision>
   </link>
+  <!-- 轮子链接 -->
   <link name="wheel_2">
     <inertial>
-      <origin xyz="-0.0013052205916208315 -0.0022598671755325594 -1.318970357273852e-07"/>
+      <origin xyz="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07"/>
       <mass value="4.24803000494366"/>
-      <inertia ixx="0.008031" ixy="0.002428" ixz="-0.0" iyy="0.010834" iyz="0.0" izz="0.006629"/>
+      <inertia ixx="0.012235" ixy="-0.0" ixz="0.0" iyy="0.006629" iyz="0.0" izz="0.006629"/>
     </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://arx_lift_description/meshes/base/wheel.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://arx_lift_description/meshes/base/wheel.obj"/>
+      </geometry>
+    </collision>
   </link>
+  <!-- 轮子链接 -->
   <link name="wheel_3">
     <inertial>
       <origin xyz="0.0026089441594678298 -1.3189703553351252e-07 2.8695680726054107e-07"/>
       <mass value="4.24803000494366"/>
       <inertia ixx="0.012235" ixy="-0.0" ixz="0.0" iyy="0.006629" iyz="0.0" izz="0.006629"/>
     </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://arx_lift_description/meshes/base/wheel.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://arx_lift_description/meshes/base/wheel.obj"/>
+      </geometry>
+    </collision>
   </link>
-  <joint name="joint_wheel1" type="fixed">
-    <origin xyz="-0.182349 0.315838 0.03"/>
-    <parent link="base"/>
+  <!-- 轮子关节定义 -->
+  <joint name="wheel1_joint" type="fixed">
+    <origin rpy="0.0 0.0 -2.0943951023931953" xyz="0.182349 0.315838 0.03"/>
+    <parent link="base_link"/>
     <child link="wheel_1"/>
   </joint>
-  <joint name="joint_wheel2" type="fixed">
-    <origin xyz="-0.182349 -0.315838 0.03"/>
-    <parent link="base"/>
+  <joint name="wheel2_joint" type="fixed">
+    <origin rpy="0.0 0.0 2.0943951023931953" xyz="0.182349 -0.315838 0.03"/>
+    <parent link="base_link"/>
     <child link="wheel_2"/>
-    <axis xyz="-0.5 -0.866025 0.0"/>
   </joint>
-  <joint name="joint_wheel3" type="fixed">
-    <origin xyz="0.364699 0.0 0.03"/>
-    <parent link="base"/>
+  <joint name="wheel3_joint" type="fixed">
+    <origin xyz="-0.364699 0.0 0.03"/>
+    <parent link="base_link"/>
     <child link="wheel_3"/>
-    <axis xyz="1.0 0.0 -0.0"/>
   </joint>
   <link name="lift_link">
     <inertial>
-      <origin xyz="-0.13956899916103924 0 0.07323798891482189"/>
+      <origin xyz="0.13956899916103924 0 0.07323798891482189"/>
       <mass value="17.38744536890084"/>
       <inertia ixx="0.187458" ixy="-0.000206" ixz="0.023942" iyy="0.178157" iyz="-0.000153" izz="0.29708"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://arx_lift_description/meshes/lift.obj"/>
+        <mesh filename="package://arx_lift_description/meshes/body/lift.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://arx_lift_description/meshes/lift.obj"/>
+        <mesh filename="package://arx_lift_description/meshes/body/lift.obj"/>
       </geometry>
     </collision>
   </link>
-  <joint name="joint_lift" type="prismatic">
-    <origin xyz="0.022199 0 0.233"/>
-    <parent link="base"/>
+  <joint name="lift_joint" type="prismatic">
+    <origin xyz="-0.032 0 0.233"/>
+    <parent link="base_link"/>
     <child link="lift_link"/>
     <axis xyz="0.0 0.0 1.0"/>
     <limit effort="1000" lower="0.0" upper="0.86" velocity="100"/>
   </joint>
   <link name="h_base_link">
     <inertial>
-      <origin xyz="-0.0020743076738515215 -1.5307881645835308e-08 -0.024619861716967787"/>
+      <origin xyz="-0.0020743076738515215 0 0.024619861716967787"/>
       <mass value="0.9930933606993821"/>
       <inertia ixx="0.000391" ixy="-0.0" ixz="1.7e-05" iyy="0.000452" iyz="0.0" izz="0.000532"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://arx_lift_description/meshes/h_base.obj"/>
+        <mesh filename="package://arx_lift_description/meshes/body/h_base.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://arx_lift_description/meshes/h_base.obj"/>
+        <mesh filename="package://arx_lift_description/meshes/body/h_base.obj"/>
       </geometry>
     </collision>
   </link>
-  <link name="h_link1_1">
+  <link name="head_link1">
     <inertial>
-      <origin xyz="-1.3121512495483172e-08 -0.0017956601536253606 -0.0404485568834118"/>
-      <mass value="1.1585686692835446"/>
-      <inertia ixx="0.000714" ixy="-0.0" ixz="0.0" iyy="0.000677" iyz="3.4e-05" izz="0.000524"/>
+      <origin xyz="-1.2166451790474E-08 0.000155101086835956 0.0414775143344981"/>
+      <mass value="0.429406588376073"/>
+      <inertia ixx="0.00027" ixy="0.00000" ixz="0.00000" iyy="0.00026" iyz="-0.00001" izz="0.00018"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://arx_lift_description/meshes/h_link1.obj"/>
+        <mesh filename="package://arx_lift_description/meshes/body/neck.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://arx_lift_description/meshes/h_link1.obj"/>
+        <mesh filename="package://arx_lift_description/meshes/body/neck.obj"/>
       </geometry>
     </collision>
   </link>
-  <link name="h_link2_1">
+  <link name="head_link2">
     <inertial>
-      <origin xyz="0.03081593597576142 -0.022504711493597663 -0.0659240377971316"/>
-      <mass value="1.5752562353484625"/>
-      <inertia ixx="0.004555" ixy="0.000214" ixz="0.000252" iyy="0.004541" iyz="-0.000299" izz="0.00636"/>
+      <origin xyz="0.0145474612596931 0.0229595215513494 0.0787914285814235"/>
+      <mass value="1.54420437039843"/>
+      <inertia ixx="0.00576" ixy="-0.00007" ixz="0.00018" iyy="0.00477" iyz="0.00015" izz="0.00768"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://arx_lift_description/meshes/h_link2.obj"/>
+        <mesh filename="package://arx_lift_description/meshes/body/head.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://arx_lift_description/meshes/h_link2.obj"/>
+        <mesh filename="package://arx_lift_description/meshes/body/head.obj"/>
       </geometry>
     </collision>
   </link>
-  <joint name="joint_h_1" type="continuous">
-    <origin xyz="0.0 0.0 -0.046"/>
+  <joint name="head_joint1" type="continuous">
+    <origin xyz="0.0 0.0 0.046"/>
     <parent link="h_base_link"/>
-    <child link="h_link1_1"/>
-    <axis xyz="0.0 -0.0 1.0"/>
-    <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
+    <child link="head_link1"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit effort="100" lower="-1.5707963267948966" upper="1.5707963267948966" velocity="100"/>
   </joint>
-  <joint name="joint_h_2" type="continuous">
-    <origin xyz="0.0 0.025 -0.047"/>
-    <parent link="h_link1_1"/>
-    <child link="h_link2_1"/>
-    <axis xyz="-0.0 -1.0 0.0"/>
-    <limit effort="100" lower="-0.785398" upper="0.785398" velocity="100"/>
+  <joint name="head_joint2" type="continuous">
+    <origin xyz="0.0 -0.025 0.049"/>
+    <parent link="head_link1"/>
+    <child link="head_link2"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <limit effort="100" lower="-0.7853981633974483" upper="0.7853981633974483" velocity="100"/>
   </joint>
   <joint name="h_fixed" type="fixed">
     <parent link="lift_link"/>
     <child link="h_base_link"/>
-    <origin rpy="0 3.1415926 0" xyz="-0.258786 0 0.220008"/>
+    <origin xyz="0.258786 0 0.220008"/>
+  </joint>
+  <link name="head_camera">
+    <visual>
+      <geometry>
+        <mesh filename="package://sensor_models/meshes/d405/d405.obj"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="head_camera_joint" type="fixed">
+    <origin xyz="0.095 0.025 0.06"/>
+    <parent link="head_link2"/>
+    <child link="head_camera"/>
   </joint>
   <joint name="arm_left_fixed" type="fixed">
     <parent link="lift_link"/>
     <child link="left_base_link"/>
-    <origin rpy="0 0 3.1415926" xyz="-0.208 -0.25000 0.092"/>
+    <origin xyz="0.208 0.25000 0.092"/>
   </joint>
   <joint name="arm_right_fixed" type="fixed">
     <parent link="lift_link"/>
     <child link="right_base_link"/>
-    <origin rpy="0 0 3.1415926" xyz="-0.208 0.25000 0.092"/>
+    <origin xyz="0.208 -0.25000 0.092"/>
   </joint>
 </robot>

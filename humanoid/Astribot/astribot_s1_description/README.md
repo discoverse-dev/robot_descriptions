@@ -48,3 +48,8 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=astribot_s1
 source ~/ros2_ws/install/setup.bash
 ros2 launch ocs2_arm_controller demo.launch.py robot:=astribot_s1 hardware:=gz world:=warehouse
 ```
+
+```bash
+source ~/ros2_ws/install/setup.bash
+ros2 launch ocs2_arm_controller demo.launch.py robot:=astribot_s1 hardware:=isaac
+```

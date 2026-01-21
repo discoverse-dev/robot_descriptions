@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
 	<link name="base_link">
 		<inertial>
 			<origin xyz="0.0718033657159837 -0.0016279349766449 0.128750850965126"/>
@@ -43,8 +44,8 @@
 		</visual>
 	</link>
 
-	<joint name="steer_motor_joint1" type="fixed">
-		<origin xyz="0.29183 -0.0014897 0.18165"/>
+	<joint name="steer_joint1" type="revolute">
+		<origin xyz="0.29183 0 0.18165"/>
 		<parent link="base_link"/>
 		<child link="steer_motor_link1"/>
 		<axis xyz="0 0 1"/>
@@ -63,18 +64,20 @@
 			</geometry>
 		</visual>
 		<collision>
+			<origin rpy="${PI/2} 0 0"/>
 			<geometry>
-				<mesh filename="file://$(find galaxea_r1lite_description)/meshes/visual/wheel.obj"/>
+				<cylinder length="0.0485" radius="0.07"/>
 			</geometry>
 		</collision>
 	</link>
 
-	<joint name="wheel_motor_joint1" type="fixed">
+	<joint name="wheel_joint1" type="continuous">
 		<origin xyz="0 0 -0.11165"/>
 		<parent link="steer_motor_link1"/>
 		<child link="wheel_motor_link1"/>
 		<axis xyz="0 1 0"/>
 	</joint>
+
 	<link name="steer_motor_link2">
 		<inertial>
 			<origin xyz="1.76196610607304E-07 7.75116053202962E-05 -0.0852489956386505"/>
@@ -87,13 +90,15 @@
 			</geometry>
 		</visual>
 	</link>
-	<joint name="steer_motor_joint2" type="fixed">
-		<origin xyz="-0.16817 0.23851 0.18165"/>
+
+	<joint name="steer_joint2" type="revolute">
+		<origin xyz="-0.16817 0.24 0.18165"/>
 		<parent link="base_link"/>
 		<child link="steer_motor_link2"/>
 		<axis xyz="0 0 1"/>
 		<limit lower="${-PI}" upper="${PI}" effort="20" velocity="20"/>
 	</joint>
+
 	<link name="wheel_motor_link2">
 		<inertial>
 			<origin xyz="2.77555756156289E-17 -1.94289029309402E-16 -2.34621350125863E-15"/>
@@ -106,17 +111,20 @@
 			</geometry>
 		</visual>
 		<collision>
+			<origin rpy="${PI/2} 0 0"/>
 			<geometry>
-				<mesh filename="file://$(find galaxea_r1lite_description)/meshes/visual/wheel.obj"/>
+				<cylinder length="0.0485" radius="0.07"/>
 			</geometry>
 		</collision>
 	</link>
-	<joint name="wheel_motor_joint2" type="fixed">
+
+	<joint name="wheel_joint2" type="continuous">
 		<origin xyz="0 0 -0.11165"/>
 		<parent link="steer_motor_link2"/>
 		<child link="wheel_motor_link2"/>
 		<axis xyz="0 1 0"/>
 	</joint>
+
 	<link name="steer_motor_link3">
 		<inertial>
 			<origin xyz="1.76196610579549E-07 7.75116053202407E-05 -0.0852489956386505"/>
@@ -130,8 +138,8 @@
 		</visual>
 	</link>
 
-	<joint name="steer_motor_joint3" type="fixed">
-		<origin xyz="-0.16817 -0.24149 0.18165"/>
+	<joint name="steer_joint3" type="revolute">
+		<origin xyz="-0.16817 -0.24 0.18165"/>
 		<parent link="base_link"/>
 		<child link="steer_motor_link3"/>
 		<axis xyz="0 0 1"/>
@@ -150,13 +158,14 @@
 			</geometry>
 		</visual>
 		<collision>
+			<origin rpy="${PI/2} 0 0"/>
 			<geometry>
-				<mesh filename="file://$(find galaxea_r1lite_description)/meshes/visual/wheel.obj"/>
+				<cylinder length="0.0485" radius="0.07"/>
 			</geometry>
 		</collision>
 	</link>
 
-	<joint name="wheel_motor_joint3" type="fixed">
+	<joint name="wheel_joint3" type="continuous">
 		<origin xyz="0 0 -0.11165"/>
 		<parent link="steer_motor_link3"/>
 		<child link="wheel_motor_link3"/>
@@ -182,7 +191,7 @@
 	</link>
 
 	<joint name="torso_joint1" type="revolute">
-		<origin xyz="0.091831 0.00036033 0.14865"/>
+		<origin xyz="0.091831 0 0.14865"/>
 		<parent link="base_link"/>
 		<child link="torso_link1"/>
 		<axis xyz="0 1 0"/>
@@ -208,7 +217,7 @@
 	</link>
 
 	<joint name="torso_joint2" type="revolute">
-		<origin xyz="0 -0.00185 0.35"/>
+		<origin xyz="0 0 0.35"/>
 		<parent link="torso_link1"/>
 		<child link="torso_link2"/>
 		<axis xyz="0 1 0"/>

@@ -1,6 +1,8 @@
 # Robot Descriptions
 
-This repository contains the URDF files for quadruped, humanoid, and manipulator robots, all organized as ROS2 packages. Most of them have been repainted in Blender for better visualization. ☺️
+This repository contains the URDF files for humanoid and manipulator robots, all organized as ROS2 packages. Most of them have been repainted in Blender for better visualization. ☺️
+
+> **Note**: Quadruped robot descriptions are now managed as a separate submodule. See the [Submodules](#submodules) section below.
 
 ## Quick Start
 
@@ -39,7 +41,7 @@ git clone --recursive https://github.com/fiveages-sim/robot_descriptions
 | Galaxea  | [R1](humanoid/Galaxea/galaxea_r1_description)        | Yes     | <img src="humanoid/.images/galaxea_r1_down.png" width="180">     <img src="humanoid/.images/galaxea_r1.png" width="160">                                                                                                 |
 | Galaxea  | [R1 Pro](humanoid/Galaxea/galaxea_r1pro_description) | Yes     | <img src="humanoid/.images/galaxea_r1_pro.png" width="200">                                                                                                                                                              |
 | ARX      | [LIFT](humanoid/ARX/arx_lift_description)            | Yes     | <img src="humanoid/.images/arx_lift.png" width="150" style="object-fit: cover; object-position: center;">     <img src="humanoid/.images/arx_lift2.png" width="150" style="object-fit: cover; object-position: center;"> |
-| ARX      | [X7S](humanoid/ARX/x7s_description)                  | Yes     | <img src="humanoid/.images/arx_x7s.png" width="150">                                                                                                                                                                     |
+| ARX      | [X7S](humanoid/ARX/arx_x7s_description)                  | Yes     | <img src="humanoid/.images/arx_x7s.png" width="150">                                                                                                                                                                     |
 | Realman  | [AIDAL](humanoid/Realman/aidal_description)          | Yes     | <img src="humanoid/.images/realman_aidal.png" width="200">                                                                                                                                                               |
 | Unitree  | [G1](humanoid/Unitree/unitree_g1_description)        | Yes     | <img src="humanoid/.images/unitree_g1.png" width="160">                                                                                                                                                                  |
 
@@ -66,6 +68,7 @@ This repository uses git submodules to manage shared components and specific rob
 | Name | Path | Repository | Description |
 |------|------|------------|-------------|
 | Common Components | `common` | [robot-descriptions-common](https://github.com/fiveages-sim/robot-descriptions-common) | Shared grippers, dexterous hands, camera models, and launch utilities |
+| Quadruped Robots | `quadruped` | [robot-descriptions-quadruped](https://github.com/fiveages-sim/robot-descriptions-quadruped) | Quadruped robot descriptions including Unitree, Deep Robotics, MagicLab, and ZsiBot |
 | Dobot CR5 | `manipulator/Dobot` | [robot-descriptions-dobot](https://github.com/fiveages-sim/robot-descriptions-dobot) | 6-DOF collaborative robot arm with real hardware integration |
 | Tianji M6 | `manipulator/Tianji` | [robot-descriptions-tianji](https://github.com/fiveages-sim/robot-descriptions-tianji) | M6-CCS and M6-SRS manipulator arms |
 | Rokae AR5 | `manipulator/Rokae` | [robot-descriptions-rokae](https://github.com/fiveages-sim/robot-descriptions-rokae) | 6-DOF industrial robot arm |
@@ -81,6 +84,9 @@ git submodule update --init --recursive
 ```bash
 # For common components
 git submodule update --init common
+
+# For quadruped robots
+git submodule update --init quadruped
 
 # For Dobot robot
 git submodule update --init manipulator/Dobot
@@ -105,18 +111,3 @@ I add mobile manipulator OCS2 config for some of the manipulator robots, you can
 `manipulator_ocs2.launch.py` launch file. More details can be found in the [OCS2 documentation](docs/OCS2.md).
 
 <img src="manipulator/.images/lekiwi_ocs2.gif" width="300" height="200" style="object-fit: cover; object-position: center;">
-
-## Quadruped Robots
-
-| Brand         | Model                                               | Repaint | Images                                                        |
-|---------------|-----------------------------------------------------|---------|---------------------------------------------------------------|
-| Unitree       | [A1](quadruped/unitree/a1_description)              | No      | <img src="quadruped/.images/unitree_a1.png" width="200">      |
-| Unitree       | [Aliengo](quadruped/unitree/aliengo_description)    | No      | <img src="quadruped/.images/unitree_aliengo.png" width="200"> |
-| Unitree       | [Go1](quadruped/unitree/go1_description)            | Yes     | <img src="quadruped/.images/unitree_go1.png" width="200">     |
-| Unitree       | [Go2](quadruped/unitree/go2_description)            | No      | <img src="quadruped/.images/unitree_go2.png" width="200">     |
-| Unitree       | [B2](quadruped/unitree/b2_description)              | No      | <img src="quadruped/.images/unitree_b2.png" width="200">      |
-| Deep Robotics | [Lite3](quadruped/deep_robotics/lite3_description)  | Yes     | <img src="quadruped/.images/deep_lite3.png" width="200">      |
-| Deep Robotics | [X30](quadruped/deep_robotics/x30_description)      | Yes     | <img src="quadruped/.images/deep_x30.png" width="200">        |
-| Xiaomi        | [CyberDog](quadruped/magiclab/cyberdog_description) | Yes     | <img src="quadruped/.images/cyberdog.png" width="200">        |
-| MagicLab      | [MagicDog](quadruped/magiclab/magicdog_description) | Yes     | <img src="quadruped/.images/magicdog.png" width="200">        |
-| ZsiBot        | [ZSL-1](quadruped/zsibot/zsl1_description)          | Yes     | <img src="quadruped/.images/zsl1.png" width="200">            |

@@ -4,8 +4,8 @@ model_information {
   
   ; motion joints in the URDF to consider fixed
   removeJoints {
-    [0]  "joint_h_1"
-    [1]  "joint_h_2"
+    [0]  "head_joint1"
+    [1]  "head_joint2"
     [2]  "left_gripper_joint"
     [3]  "right_gripper_joint"
   }

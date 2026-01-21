@@ -5,12 +5,10 @@
 		Parameters:
 		- name: arm name prefix (e.g., "left" or "right")
 		- direction: direction multiplier (1 for left, -1 for right)
-		- joint_idx_offset: joint index offset (13 for left, 20 for right)
 	-->
-	<xacro:macro name="A2Arm" params="name direction:=1 joint_idx_offset:=13">
+	<xacro:macro name="A2Arm" params="name direction:=1">
 		<xacro:property name="prefix" value="${name + '_' if name else ''}"/>
 		<xacro:property name="dir" value="${direction}"/>
-		<xacro:property name="idx_base" value="${joint_idx_offset}"/>
 
 		<!-- Arm base link -->
 		<link name="${prefix}arm_base"/>

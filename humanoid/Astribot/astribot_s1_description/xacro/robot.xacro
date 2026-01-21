@@ -3,14 +3,16 @@
 <!-- |    Complete Robot Description for Astribot S1                                   | -->
 <!-- |    This file includes the base robot structure (chassis, torso, head) and arms  | -->
 <!-- =================================================================================== -->
-<robot name="astribot_whole_body" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="Astribot S1" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 	<!-- Include the base robot structure (chassis, torso and head) -->
-	<xacro:include filename="$(find astribot_s1_description)/xacro/base.xacro"/>
+	<xacro:include filename="$(find astribot_s1_description)/xacro/components/base.xacro"/>
 
 	<!-- Include the arm macro -->
-	<xacro:include filename="$(find astribot_s1_description)/xacro/s1_arm.xacro"/>
+	<xacro:include filename="$(find astribot_s1_description)/xacro/components/s1_arm.xacro"/>
 
+	<xacro:arg name="enable_wheel_joints" default="false"/>
+	<xacro:Base enable_wheel_joints="$(arg enable_wheel_joints)"/>
 
 	<!-- =================================================================================== -->
 	<!-- Generate Left and Right Arms Using Macro                                          -->
@@ -36,7 +38,7 @@
 
 	<xacro:arg name="type" default="gripper"/>
 	<xacro:if value="${'$(arg type)' == 'gripper'}">
-		<xacro:include filename="$(find astribot_s1_description)/xacro/s1_gripper.xacro"/>
+		<xacro:include filename="$(find astribot_s1_description)/xacro/components/s1_gripper.xacro"/>
 		<xacro:Gripper name="left"/>
 		<xacro:Gripper name="right"/>
 

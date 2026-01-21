@@ -22,3 +22,6 @@
 	path = humanoid/FiveAges/fiveages_w2_description
 	url = git@github.com:fiveages-sim/fa-w2-description.git
 	branch = main
+[submodule "quadruped"]
+	path = quadruped
+	url = git@github.com:fiveages-sim/robot-descriptions-quadruped.git

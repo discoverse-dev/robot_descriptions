@@ -5,14 +5,11 @@
 		Parameters:
 		- name: leg name prefix (e.g., "left" or "right")
 		- direction: direction multiplier (1 for left, -1 for right)
-		- joint_idx_offset: joint index offset (1 for left, 7 for right)
 		- parent_link: parent link name (usually "base_link")
-		- hip_roll_origin_y: y position for hip_roll joint origin (0.105 for left, -0.105 for right)
 	-->
-	<xacro:macro name="A2Leg" params="name direction:=1 joint_idx_offset:=1 parent_link hip_roll_origin_y">
+	<xacro:macro name="A2Leg" params="name direction:=1 parent_link">
 		<xacro:property name="prefix" value="${name + '_' if name else ''}"/>
 		<xacro:property name="dir" value="${direction}"/>
-		<xacro:property name="idx_base" value="${joint_idx_offset}"/>
 
 		<!-- Hip roll -->
 		<link name="${prefix}hip_roll">
@@ -34,7 +31,7 @@
 		</link>
 
 		<joint name="${prefix}hip_roll" type="revolute">
-			<origin xyz="-0.0808 ${hip_roll_origin_y} -0.0652" rpy="0.7854 0 1.5708"/>
+			<origin xyz="-0.0808 ${dir*0.105} -0.0652" rpy="0.7854 0 1.5708"/>
 			<parent link="${parent_link}"/>
 			<child link="${prefix}hip_roll"/>
 			<axis xyz="0 0 1"/>
@@ -135,7 +132,7 @@
 			</visual>
 		</link>
 
-		<joint name="idx${idx_base+4}_${prefix}toe_pitch" type="revolute">
+		<joint name="${prefix}toe_pitch" type="revolute">
 			<origin xyz="-0.377 0 0"/>
 			<parent link="${prefix}tarsus"/>
 			<child link="${prefix}toe_pitch"/>
@@ -162,7 +159,7 @@
 			</collision>
 		</link>
 
-		<joint name="idx${idx_base+5}_${prefix}toe_roll" type="revolute">
+		<joint name="${prefix}toe_roll" type="revolute">
 			<origin xyz="0 0 0" rpy="-1.5707963 0 0"/>
 			<parent link="${prefix}toe_pitch"/>
 			<child link="${prefix}toe_roll"/>

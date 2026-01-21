@@ -9,27 +9,44 @@ at [ARX_Models](https://github.com/ARXroboticsX/ARX_Model)
 cd ~/ros2_ws
 colcon build --packages-up-to arx_lift_description --symlink-install
 ```
-  
+
 ## 2. Visualize the robot
 
+### 2.1 Full Robot
+
 * Lift with X5 Arm
-    ```bash
-    source ~/ros2_ws/install/setup.bash
-    ros2 launch robot_common_launch manipulator.launch.py robot:=arx_lift
-    ```
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch manipulator.launch.py robot:=arx_lift
+  ```
   ![arx lift x5](../../.images/arx_lift2.png)
 
 * Lift with R5 Arm
-    ```bash
-    source ~/ros2_ws/install/setup.bash
-    ros2 launch robot_common_launch manipulator.launch.py robot:=arx_lift type:="r5"
-    ```
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch manipulator.launch.py robot:=arx_lift type:="r5"
+  ```
 
   ![arx lift](../../.images/arx_lift.png)
+
+## 2.2 Components
+
+* Base
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch component.launch.py robot:=arx_lift
+  ```
+
+* Wheel
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch component.launch.py robot:=arx_lift type:=wheel
+  ```
 
 ## 3. OCS2 Demo
 
 ### 3.1 Official OCS2 Mobile Manipulator Demo
+
 * Lift with X5 Arm
     ```bash
     source ~/ros2_ws/install/setup.bash
@@ -54,3 +71,10 @@ colcon build --packages-up-to arx_lift_description --symlink-install
   source ~/ros2_ws/install/setup.bash
   ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_lift type:=r5 hardware:=gz world:=dart
   ```
+  
+* Isaac Sim Launch
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_lift hardware:=isaac
+  ```
+  
