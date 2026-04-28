@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<!--
+		Ai2-Bot2 chassis: base_link + driven wheels (fl/rl/fr/rr) + driving wheels (left/right).
+		Use <xacro:Ai2Bot2Chassis/> then attach body to base_link.
+	-->
+
+	<xacro:macro name="Ai2Bot2Chassis" params="joints_movable:=false">
+
+		<!-- Like FiveAges W2: lock chassis joints for visualization by switching joint types -->
+		<xacro:if value="${joints_movable}">
+			<xacro:property name="wheel_joint_type" value="continuous"/>
+		</xacro:if>
+		<xacro:unless value="${joints_movable}">
+			<xacro:property name="wheel_joint_type" value="fixed"/>
+		</xacro:unless>
+
+		<link name="base_footprint"/>
+		<joint name="base_footprint_joint" type="fixed">
+			<parent link="base_footprint"/>
+			<child link="base_link"/>
+		</joint>
+
+		<link name="base_link">
+			<inertial>
+				<origin xyz="-0.026689 -0.0065193 0.14154"/>
+				<mass value="64.788"/>
+				<inertia ixx="0.346" ixy="0.00079709" ixz="-0.022691"
+								 iyy="0.65327" iyz="-6.4191E-05" izz="0.70449"/>
+			</inertial>
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find ai2_bot2_description)/meshes/Visual/chassis/chassis.glb"/>
+				</geometry>
+			</visual>
+			<collision>
+				<origin xyz="0 0 0.1"/>
+				<geometry>
+					<box size="0.6 0.46 0.15"/>
+				</geometry>
+			</collision>
+		</link>
+
+		<!-- driven wheels: fl=front_left, rl=rear_left, fr=front_right, rr=rear_right; _v/_h = vertical/horizontal joint -->
+		<link name="driven_fl_link_v">
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find ai2_bot2_description)/meshes/Visual/chassis/driven_v.glb"/>
+				</geometry>
+			</visual>
+		</link>
+		<joint name="driven_fl_joint_v" type="${wheel_joint_type}">
+			<origin xyz="0.215 0.15 0.085704"/>
+			<parent link="base_link"/>
+			<child link="driven_fl_link_v"/>
+			<axis xyz="0 0 1"/>
+			<limit effort="2000" velocity="10"/>
+		</joint>
+
+		<link name="driven_fl_link_h">
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find ai2_bot2_description)/meshes/Visual/chassis/driven_h.glb"/>
+				</geometry>
+			</visual>
+			<collision>
+				<geometry>
+					<sphere radius="0.0375"/>
+				</geometry>
+			</collision>
+		</link>
+		<joint name="driven_fl_joint_h" type="${wheel_joint_type}">
+			<origin xyz="-0.016001 0 -0.0482" rpy="-1.5708 0 0"/>
+			<parent link="driven_fl_link_v"/>
+			<child link="driven_fl_link_h"/>
+			<axis xyz="0 0 1"/>
+			<limit effort="2000" velocity="10"/>
+		</joint>
+
+		<link name="driven_rl_link_v">
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find ai2_bot2_description)/meshes/Visual/chassis/driven_v.glb"/>
+				</geometry>
+			</visual>
+		</link>
+		<joint name="driven_rl_joint_v" type="${wheel_joint_type}">
+			<origin xyz="-0.215 0.15 0.085704"/>
+			<parent link="base_link"/>
+			<child link="driven_rl_link_v"/>
+			<axis xyz="0 0 1"/>
+			<limit effort="2000" velocity="10"/>
+		</joint>
+		<link name="driven_rl_link_h">
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find ai2_bot2_description)/meshes/Visual/chassis/driven_h.glb"/>
+				</geometry>
+			</visual>
+			<collision>
+				<geometry>
+					<sphere radius="0.0375"/>
+				</geometry>
+			</collision>
+		</link>
+		<joint name="driven_rl_joint_h" type="${wheel_joint_type}">
+			<origin xyz="-0.016001 0 -0.0482" rpy="-1.5708 0 0"/>
+			<parent link="driven_rl_link_v"/>
+			<child link="driven_rl_link_h"/>
+			<axis xyz="0 0 1"/>
+			<limit effort="2000" velocity="10"/>
+		</joint>
+
+		<link name="driven_fr_link_v">
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find ai2_bot2_description)/meshes/Visual/chassis/driven_v.glb"/>
+				</geometry>
+			</visual>
+		</link>
+		<joint name="driven_fr_joint_v" type="${wheel_joint_type}">
+			<origin xyz="0.215 -0.15 0.085704"/>
+			<parent link="base_link"/>
+			<child link="driven_fr_link_v"/>
+			<axis xyz="0 0 1"/>
+			<limit effort="2000" velocity="10"/>
+		</joint>
+		<link name="driven_fr_link_h">
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find ai2_bot2_description)/meshes/Visual/chassis/driven_h.glb"/>
+				</geometry>
+			</visual>
+			<collision>
+				<geometry>
+					<sphere radius="0.0375"/>
+				</geometry>
+			</collision>
+		</link>
+		<joint name="driven_fr_joint_h" type="${wheel_joint_type}">
+			<origin xyz="-0.016001 0 -0.0482" rpy="-1.5708 0 0"/>
+			<parent link="driven_fr_link_v"/>
+			<child link="driven_fr_link_h"/>
+			<axis xyz="0 0 1"/>
+			<limit effort="2000" velocity="10"/>
+		</joint>
+
+		<link name="driven_rr_link_v">
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find ai2_bot2_description)/meshes/Visual/chassis/driven_v.glb"/>
+				</geometry>
+			</visual>
+		</link>
+		<joint name="driven_rr_joint_v" type="${wheel_joint_type}">
+			<origin xyz="-0.215 -0.15 0.085704"/>
+			<parent link="base_link"/>
+			<child link="driven_rr_link_v"/>
+			<axis xyz="0 0 1"/>
+			<limit effort="2000" velocity="10"/>
+		</joint>
+		<link name="driven_rr_link_h">
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find ai2_bot2_description)/meshes/Visual/chassis/driven_h.glb"/>
+				</geometry>
+			</visual>
+			<collision>
+				<geometry>
+					<sphere radius="0.0375"/>
+				</geometry>
+			</collision>
+		</link>
+		<joint name="driven_rr_joint_h" type="${wheel_joint_type}">
+			<origin xyz="-0.016001 0 -0.0482" rpy="-1.5708 0 0"/>
+			<parent link="driven_rr_link_v"/>
+			<child link="driven_rr_link_h"/>
+			<axis xyz="0 0 1"/>
+			<limit effort="2000" velocity="10"/>
+		</joint>
+
+		<link name="driving_left_link">
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find aidal_description)/meshes/woosh_agv/wheel.glb" scale="1 1 1"/>
+				</geometry>
+			</visual>
+			<collision>
+				<origin rpy="0 1.5708 0"/>
+				<geometry>
+					<cylinder radius="0.085" length="0.034"/>
+				</geometry>
+			</collision>
+		</link>
+		<joint name="driving_left_joint" type="${wheel_joint_type}">
+			<origin xyz="0 0.208 0.0845" rpy="0 0 -1.5708"/>
+			<parent link="base_link"/>
+			<child link="driving_left_link"/>
+			<axis xyz="-1 0 0"/>
+			<limit effort="2000" velocity="10"/>
+		</joint>
+
+		<link name="driving_right_link">
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find aidal_description)/meshes/woosh_agv/wheel.glb"
+								scale="1 1 -1"/>
+				</geometry>
+			</visual>
+			<collision>
+				<origin rpy="0 1.5708 0"/>
+				<geometry>
+					<cylinder radius="0.085" length="0.034"/>
+				</geometry>
+			</collision>
+		</link>
+		<joint name="driving_right_joint" type="${wheel_joint_type}">
+			<origin xyz="0 -0.208 0.0845" rpy="0 0 -1.5708"/>
+			<parent link="base_link"/>
+			<child link="driving_right_link"/>
+			<axis xyz="-1 0 0"/>
+			<limit effort="2000" velocity="10"/>
+		</joint>
+
+		<link name="chassis_panel">
+			<!--      <visual>-->
+			<!--        <geometry>-->
+			<!--          <mesh filename="file://$(find aidal_description)/meshes/woosh_agv/panel.glb"/>-->
+			<!--        </geometry>-->
+			<!--      </visual>-->
+		</link>
+		<joint name="chassis_panel_joint" type="fixed">
+			<origin xyz="-0.0524 0.1771 0.2463" rpy="1.5708 -1.5708 0"/>
+			<parent link="base_link"/>
+			<child link="chassis_panel"/>
+		</joint>
+
+		<link name="charge_port">
+			<!--      <visual>-->
+			<!--        <geometry>-->
+			<!--          <mesh filename="file://$(find ai2_bot2_description)/meshes/Visual/chassis/charge_port.glb"/>-->
+			<!--        </geometry>-->
+			<!--      </visual>-->
+		</link>
+		<joint name="charge_port" type="fixed">
+			<origin xyz="0.283736 0 0.056555"/>
+			<parent link="base_link"/>
+			<child link="charge_port"/>
+		</joint>
+
+		<link name="lidar_link">
+			<!--      <visual>-->
+			<!--        <geometry>-->
+			<!--          <mesh filename="file://$(find sensor_models)/meshes/orbbec/ms500.glb"/>-->
+			<!--        </geometry>-->
+			<!--      </visual>-->
+		</link>
+		<joint name="lidar_joint" type="fixed">
+			<origin xyz="0.260985 0 0.126476" rpy="0 0 1.5708"/>
+			<parent link="base_link"/>
+			<child link="lidar_link"/>
+		</joint>
+
+	</xacro:macro>
+
+</robot>

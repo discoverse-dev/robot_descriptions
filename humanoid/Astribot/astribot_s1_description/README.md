@@ -25,7 +25,7 @@ colcon build --packages-up-to astribot_s1_description --symlink-install
 * Robot with BrainCo Revo2 hand
   ```bash
   source ~/ros2_ws/install/setup.bash
-  ros2 launch robot_common_launch manipulator.launch.py robot:=astribot_s1 type:=revo2
+  ros2 launch robot_common_launch manipulator.launch.py robot:=astribot_s1 type:=
   ```
   ![S1 revo2](../../.images/astribot_s1_revo2.png)
 
@@ -41,15 +41,20 @@ ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=astribot_
 ### 3.2 OCS2 Arm Controller Demo
 ```bash
 source ~/ros2_ws/install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=astribot_s1
+ros2 launch ocs2_arm_controller full_body.launch.py robot:=astribot_s1
 ```
 
 ```bash
 source ~/ros2_ws/install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=astribot_s1 hardware:=gz world:=warehouse
+ros2 launch ocs2_arm_controller full_body.launch.py robot:=astribot_s1 type:=revo2
 ```
 
 ```bash
 source ~/ros2_ws/install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=astribot_s1 hardware:=isaac
+ros2 launch ocs2_arm_controller full_body.launch.py robot:=astribot_s1 hardware:=gz world:=warehouse
+```
+
+```bash
+source ~/ros2_ws/install/setup.bash
+ros2 launch ocs2_arm_controller full_body.launch.py robot:=astribot_s1 hardware:=isaac
 ```

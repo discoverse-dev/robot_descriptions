@@ -176,10 +176,10 @@ inputCost
     {
       scaling 1e-3
 
-         (0,0)   0.5       ; torso_joint1
-         (1,0)   0.5       ; torso_joint2
-         (2,0)   0.5       ; torso_joint3
-         (3,0)   0.5       ; torso_joint4
+         (0,0)   0.1       ; torso_joint1
+         (1,0)   0.1       ; torso_joint2
+         (2,0)   0.1       ; torso_joint3
+         (3,0)   0.1       ; torso_joint4
          (4,0)   1.0        ; left_arm_joint1
          (5,0)   1.0        ; left_arm_joint2
          (6,0)   1.0        ; left_arm_joint3
@@ -248,10 +248,10 @@ jointPositionLimits
   activate  true
 
   ; relaxed log barrier mu
-  mu      0.01
+  mu      0.001
 
   ; relaxed log barrier delta
-  delta   1e-3
+  delta   1e-2
 }
 
 jointVelocityLimits
@@ -299,20 +299,20 @@ jointVelocityLimits
         (1,0)  -1.0         ; torso_joint2 [rad/s]
         (2,0)  -1.0	        ; torso_joint3 [rad/s]
         (3,0)  -1.0	        ; torso_joint4 [rad/s]
-        (4,0)  -5.1	    ; left_arm_joint1 [rad/s]
-        (5,0)  -5.1	    ; left_arm_joint2 [rad/s]
-        (6,0)  -5.1	    ; left_arm_joint3 [rad/s]
-        (7,0)  -5.1	    ; left_arm_joint4 [rad/s]
-        (8,0)  -5.1	    ; left_arm_joint5 [rad/s]
-        (9,0)  -5.1	    ; left_arm_joint6 [rad/s]
-        (10,0)  -5.1	    ; right_arm_joint1 [rad/s]
-        (11,0)  -5.1	    ; right_arm_joint2 [rad/s]
-        (12,0)  -5.1	    ; right_arm_joint3 [rad/s]
-        (13,0)  -5.1	    ; right_arm_joint4 [rad/s]
-        (14,0)  -5.1	    ; right_arm_joint5 [rad/s]
-        (15,0)  -5.1	    ; right_arm_joint6 [rad/s]
-        (16,0)  -5.1	    ; right_arm_joint5 [rad/s]
-        (17,0)  -5.1	    ; right_arm_joint6 [rad/s]
+        (4,0)  -1.5708	    ; left_arm_joint1 [rad/s]
+        (5,0)  -1.5708	    ; left_arm_joint2 [rad/s]
+        (6,0)  -1.5708	    ; left_arm_joint3 [rad/s]
+        (7,0)  -1.5708	    ; left_arm_joint4 [rad/s]
+        (8,0)  -1.5708	    ; left_arm_joint5 [rad/s]
+        (9,0)  -1.5708	    ; left_arm_joint6 [rad/s]
+        (10,0)  -1.5708	    ; right_arm_joint1 [rad/s]
+        (11,0)  -1.5708	    ; right_arm_joint2 [rad/s]
+        (12,0)  -1.5708	    ; right_arm_joint3 [rad/s]
+        (13,0)  -1.5708	    ; right_arm_joint4 [rad/s]
+        (14,0)  -1.5708	    ; right_arm_joint5 [rad/s]
+        (15,0)  -1.5708	    ; right_arm_joint6 [rad/s]
+        (16,0)  -1.5708	    ; right_arm_joint5 [rad/s]
+        (17,0)  -1.5708	    ; right_arm_joint6 [rad/s]
     }
   }
 
@@ -353,20 +353,20 @@ jointVelocityLimits
         (1,0)  1.0          ; torso_joint2 [rad/s]
         (2,0)  1.0	        ; torso_joint3 [rad/s]
         (3,0)  1.0	        ; torso_joint4 [rad/s]
-        (4,0)  5.1	    ; left_arm_joint1 [rad/s]
-        (5,0)  5.1	    ; left_arm_joint2 [rad/s]
-        (6,0)  5.1	    ; left_arm_joint3 [rad/s]
-        (7,0)  5.1	    ; left_arm_joint4 [rad/s]
-        (8,0)  5.1	    ; left_arm_joint5 [rad/s]
-        (9,0)  5.1	    ; left_arm_joint6 [rad/s]
-        (10,0)  5.1	    ; right_arm_joint1 [rad/s]
-        (11,0)  5.1	    ; right_arm_joint2 [rad/s]
-        (12,0)  5.1	    ; right_arm_joint3 [rad/s]
-        (13,0)  5.1	    ; right_arm_joint4 [rad/s]
-        (14,0)  5.1	    ; right_arm_joint5 [rad/s]
-        (15,0)  5.1	    ; right_arm_joint6 [rad/s]
-        (16,0)  5.1	    ; right_arm_joint5 [rad/s]
-        (17,0)  5.1	    ; right_arm_joint6 [rad/s]
+        (4,0)  1.5708	    ; left_arm_joint1 [rad/s]
+        (5,0)  1.5708	    ; left_arm_joint2 [rad/s]
+        (6,0)  1.5708	    ; left_arm_joint3 [rad/s]
+        (7,0)  1.5708	    ; left_arm_joint4 [rad/s]
+        (8,0)  1.5708	    ; left_arm_joint5 [rad/s]
+        (9,0)  1.5708	    ; left_arm_joint6 [rad/s]
+        (10,0)  1.5708	    ; right_arm_joint1 [rad/s]
+        (11,0)  1.5708	    ; right_arm_joint2 [rad/s]
+        (12,0)  1.5708	    ; right_arm_joint3 [rad/s]
+        (13,0)  1.5708	    ; right_arm_joint4 [rad/s]
+        (14,0)  1.5708	    ; right_arm_joint5 [rad/s]
+        (15,0)  1.5708	    ; right_arm_joint6 [rad/s]
+        (16,0)  1.5708	    ; right_arm_joint5 [rad/s]
+        (17,0)  1.5708	    ; right_arm_joint6 [rad/s]
     }
   }
 }

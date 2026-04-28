@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+	<name>ai2_bot2_description</name>
+	<version>0.0.0</version>
+	<description>The Ai2 Bot2 description package</description>
+
+	<maintainer email="biao876990970@hotmail.com">Huang Zhenbiao</maintainer>
+	<license>TODO</license>
+
+	<exec_depend>robot_common_launch</exec_depend>
+	<exec_depend>rm75_description</exec_depend>
+	<exec_depend>sensor_models</exec_depend>
+	<exec_depend>aidal_description</exec_depend>
+
+	<export>
+		<build_type>ament_cmake</build_type>
+	</export>
+
+</package>

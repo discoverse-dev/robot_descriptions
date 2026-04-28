@@ -163,20 +163,20 @@ inputCost
     ; input costs for the arm DOFs
     arm
     {
-      scaling 1e-3
-        (0,0)   0.05      ; lifting_joint
+      scaling 1e-2
+        (0,0)   1.0      ; lifting_joint
         (1,0)   0.5      ; left_joint1
         (2,0)   0.5      ; left_joint2
         (3,0)   0.5      ; left_joint3
-        (4,0)   0.5      ; left_joint4
-        (5,0)   0.5      ; left_joint5
-        (6,0)   0.5      ; left_joint6
+        (4,0)   0.25      ; left_joint4
+        (5,0)   0.25      ; left_joint5
+        (6,0)   0.25      ; left_joint6
         (7,0)   0.5      ; right_joint1
         (8,0)   0.5      ; right_joint2
         (9,0)   0.5      ; right_joint3
-        (10,0)   0.5     ; right_joint4
-        (11,0)   0.5     ; right_joint5
-        (12,0)   0.5     ; right_joint6
+        (10,0)   0.25     ; right_joint4
+        (11,0)   0.25     ; right_joint5
+        (12,0)   0.25     ; right_joint6
     }
   }
 }
@@ -280,19 +280,19 @@ jointVelocityLimits
     {
         (0,0)  -0.2       ; lifting_joint [m/s]
 
-        (1,0)  -6.28	    ; left_joint1 [rad/s]
-        (2,0)  -6.28	    ; left_joint2 [rad/s]
-        (3,0)  -6.28	    ; left_joint3 [rad/s]
-        (4,0)  -6.28	    ; left_joint4 [rad/s]
-        (5,0)  -6.28	    ; left_joint5 [rad/s]
-        (6,0)  -6.28	    ; left_joint6 [rad/s]
+        (1,0)  -1.57	    ; left_joint1 [rad/s]
+        (2,0)  -1.57	    ; left_joint2 [rad/s]
+        (3,0)  -1.57	    ; left_joint3 [rad/s]
+        (4,0)  -1.57	    ; left_joint4 [rad/s]
+        (5,0)  -1.57	    ; left_joint5 [rad/s]
+        (6,0)  -1.57	    ; left_joint6 [rad/s]
 
-        (7,0)  -6.28	    ; right_joint1 [rad/s]
-        (8,0)  -6.28	    ; right_joint2 [rad/s]
-        (9,0)  -6.28	    ; right_joint3 [rad/s]
-        (10,0)  -6.28	    ; right_joint4 [rad/s]
-        (11,0)  -6.28	    ; right_joint5 [rad/s]
-        (12,0)  -6.28	    ; right_joint6 [rad/s]
+        (7,0)  -1.57	    ; right_joint1 [rad/s]
+        (8,0)  -1.57	    ; right_joint2 [rad/s]
+        (9,0)  -1.57	    ; right_joint3 [rad/s]
+        (10,0)  -1.57	    ; right_joint4 [rad/s]
+        (11,0)  -1.57	    ; right_joint5 [rad/s]
+        (12,0)  -1.57	    ; right_joint6 [rad/s]
     }
   }
 
@@ -331,19 +331,19 @@ jointVelocityLimits
     {
         (0,0)  0.2       ; lifting_joint [m/s]
 
-        (1,0)  6.28	    ; left_joint1 [rad/s]
-        (2,0)  6.28	    ; left_joint2 [rad/s]
-        (3,0)  6.28	    ; left_joint3 [rad/s]
-        (4,0)  6.28	    ; left_joint4 [rad/s]
-        (5,0)  6.28	    ; left_joint5 [rad/s]
-        (6,0)  6.28	    ; left_joint6 [rad/s]
+        (1,0)  1.57	    ; left_joint1 [rad/s]
+        (2,0)  1.57	    ; left_joint2 [rad/s]
+        (3,0)  1.57	    ; left_joint3 [rad/s]
+        (4,0)  1.57	    ; left_joint4 [rad/s]
+        (5,0)  1.57	    ; left_joint5 [rad/s]
+        (6,0)  1.57	    ; left_joint6 [rad/s]
 
-        (7,0)  6.28	    ; right_joint1 [rad/s]
-        (8,0)  6.28	    ; right_joint2 [rad/s]
-        (9,0)  6.28	    ; right_joint3 [rad/s]
-        (10,0)  6.28	    ; right_joint4 [rad/s]
-        (11,0)  6.28	    ; right_joint5 [rad/s]
-        (12,0)  6.28	    ; right_joint6 [rad/s]
+        (7,0)  1.57	    ; right_joint1 [rad/s]
+        (8,0)  1.57	    ; right_joint2 [rad/s]
+        (9,0)  1.57	    ; right_joint3 [rad/s]
+        (10,0)  1.57	    ; right_joint4 [rad/s]
+        (11,0)  1.57	    ; right_joint5 [rad/s]
+        (12,0)  1.57	    ; right_joint6 [rad/s]
     }
   }
 }

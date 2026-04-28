@@ -44,7 +44,8 @@ diff_drive_controller:
 ocs2_arm_controller:
   ros__parameters:
     # Joint configuration
-    update_rate: 50  # Hz
+    update_rate: 100  # Hz
+    mpc_frequency: 50
     info_file_name: fixed_base
     joints:
       - slide_joint
